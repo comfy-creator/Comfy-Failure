@@ -1,0 +1,50 @@
+{
+    "name": "@void-tech/comfy-ts",
+    "version": "0.0.4",
+    "main": "./dist/app.js",
+    "type": "module",
+    "scripts": {
+        "vite:dev": "vite",
+        "build": "tsc && vite build",
+        "vite:preview": "vite preview",
+        "dependency-test": "madge --circular ./src/scripts/app.ts",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "copy-public": "cpx \"web-src/public/**/*.*\" web/",
+        "clean": "rimraf ./web/",
+        "dev": "http-server ./web-src -c-1 -o",
+        "start": "http-server ./web -c-1 -o",
+        "serve2": "serve -s dist -l 8188",
+        "start2": "yarn build && yarn serve2"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.16",
+        "@types/react": "^17.0.38",
+        "@types/react-dom": "^18.2.18",
+        "@types/uuid": "^9.0.8",
+        "@typescript-eslint/eslint-plugin": "^6.20.0",
+        "@typescript-eslint/parser": "^6.20.0",
+        "@vitejs/plugin-react": "^4.2.1",
+        "cpx": "^1.5.0",
+        "eslint": "^8.56.0",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.5",
+        "http-server": "^13.0.1",
+        "madge": "^4.0.1",
+        "prettier": "^3.2.4",
+        "rimraf": "^3.0.2",
+        "typescript": "^5.3.3",
+        "vite": "^5.0.12"
+    },
+    "dependencies": {
+        "litegraph.js": "^0.7.18",
+        "nice-grpc": "^2.1.7",
+        "nice-grpc-web": "^3.3.2",
+        "protobufjs": "^7.2.6",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "reconnecting-websocket": "^4.4.0",
+        "reflect-metadata": "^0.2.1",
+        "uuid": "3"
+    }
+}
